@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_ModbusSlaveRtu" Id="{3c28a97a-7b9e-4799-881a-cc6e3fde9dc8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ModbusSlaveRtu EXTENDS FB_UniversalModbusSlave IMPLEMENTS I_ModbusSlaveRtu
+VAR
+	iModbusErrorID		: MODBUS_ERRORS;// Modbus Rtu
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[bModbusError := iModbusErrorID <> MODBUSERROR_NO_ERROR;]]></ST>
+    </Implementation>
+    <Property Name="ModbusErrorID" Id="{10a0f1de-4a02-4f0a-b4da-6536bf3ef75c}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'variable'}
+PROPERTY ModbusErrorID : MODBUS_ERRORS]]></Declaration>
+      <Get Name="Get" Id="{feb78e1e-5a56-48eb-bc4b-7b331dd98e5f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[ModbusErrorID := iModbusErrorID;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{41376bb8-baa5-43b9-b4af-8506bc2623c3}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[iModbusErrorID := ModbusErrorID;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_ModbusSlaveRtu">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_ModbusSlaveRtu.ModbusErrorID.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_ModbusSlaveRtu.ModbusErrorID.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

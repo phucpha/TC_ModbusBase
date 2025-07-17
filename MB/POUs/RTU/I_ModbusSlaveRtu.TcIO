@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_ModbusSlaveRtu" Id="{f6cc8562-becd-4eee-9889-c7c39fc121d0}">
+    <Declaration><![CDATA[INTERFACE I_ModbusSlaveRtu EXTENDS I_UniversalModbusSlave
+]]></Declaration>
+    <Property Name="ModbusErrorID" Id="{104d4279-78f3-4a2b-abfb-5f74257f2b8a}">
+      <Declaration><![CDATA[PROPERTY ModbusErrorID : MODBUS_ERRORS]]></Declaration>
+      <Get Name="Get" Id="{c488a572-8a84-4064-b5dc-1c1f779e9737}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{44a6c67d-c825-46fe-ae17-ba209b391519}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

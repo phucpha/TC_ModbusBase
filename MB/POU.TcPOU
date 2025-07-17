@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="POU" Id="{e2653010-59d5-49c6-bdd0-b9433cd60d45}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM POU
+VAR
+	fb : FB_ModbusMaster_PcCOM;
+	fbb : FB_ModbusRtuMaster_KL6x22B;
+	fbc : FB_ModbusRtuMaster_KL6x5B;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="POU">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

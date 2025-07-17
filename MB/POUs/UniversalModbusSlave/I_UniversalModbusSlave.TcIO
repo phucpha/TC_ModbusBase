@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_UniversalModbusSlave" Id="{2ebe957b-cc9a-419f-90f6-b33e5f05c248}">
+    <Declaration><![CDATA[INTERFACE I_UniversalModbusSlave
+]]></Declaration>
+    <Property Name="AddressRead" Id="{dee7b5b1-c4b0-40ec-878a-82d2b76b0dd8}">
+      <Declaration><![CDATA[PROPERTY AddressRead : POINTER TO WORD]]></Declaration>
+      <Get Name="Get" Id="{5fb96f44-6dc5-461f-869c-bc965aa1fa5c}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="AddressWrite" Id="{04297965-8109-4286-a684-adaceb9424b8}">
+      <Declaration><![CDATA[PROPERTY AddressWrite : Pointer to Word]]></Declaration>
+      <Get Name="Get" Id="{9117b511-3a63-446c-8776-7a1689062b93}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Convert" Id="{67b19cf7-dc69-4018-a62c-5d949742214d}">
+      <Declaration><![CDATA[METHOD Convert : BOOL
+VAR_INPUT
+	iRegionNo	:	INT;
+	pReadData	:	POINTER TO word;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="Error" Id="{1e8425ca-42c6-44b4-a946-2ba848f3188a}">
+      <Declaration><![CDATA[PROPERTY Error : Reference to Bool]]></Declaration>
+      <Get Name="Get" Id="{7d204f92-f2df-4e27-861a-19944e8646ef}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="FirstCycle" Id="{ff76b66c-4ab6-4ead-a27c-e8efcf76d1cd}">
+      <Declaration><![CDATA[METHOD FirstCycle 
+VAR_INPUT
+	sName : STRING;
+	iUnitID : BYTE ; // modbus address of the device : 1- 255
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="ModbusError" Id="{ee45317a-b5e7-416b-b41a-e1260a8f3063}">
+      <Declaration><![CDATA[PROPERTY ModbusError : Reference to bool]]></Declaration>
+      <Get Name="Get" Id="{e4b26f85-e35c-4bf9-a235-9fa96629198b}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Name" Id="{2c69d065-23dd-4e8f-9673-4e7681d51ae9}">
+      <Declaration><![CDATA[PROPERTY Name : STRING]]></Declaration>
+      <Get Name="Get" Id="{30236371-0955-4842-8eb2-a434519c7636}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{6b9c6905-1e13-4074-96ec-750265b20c6d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="NumAddRegionRead" Id="{d937ec07-11bc-425a-8979-6effea6529dd}">
+      <Declaration><![CDATA[PROPERTY NumAddRegionRead : UINT]]></Declaration>
+      <Get Name="Get" Id="{52c4942d-5459-4a68-bb15-769a28af736f}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="NumAddRegionWrite" Id="{b989a895-efda-47a4-acc3-a5f25d8e554f}">
+      <Declaration><![CDATA[PROPERTY NumAddRegionWrite : Uint]]></Declaration>
+      <Get Name="Get" Id="{ab147357-66bc-4265-bae8-83e72ebb3c3d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="ReallyError" Id="{9da2d6f7-76c7-4864-a74c-46ff723b5bfb}">
+      <Declaration><![CDATA[PROPERTY ReallyError : REFERENCE to bool]]></Declaration>
+      <Get Name="Get" Id="{28f87720-b78c-463a-8b7c-c5dd10725a15}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="TimeRemainConfirmReallyError" Id="{f6eda04a-3a23-47c0-928b-bfcfbbfe03ec}">
+      <Declaration><![CDATA[PROPERTY TimeRemainConfirmReallyError : Time]]></Declaration>
+      <Get Name="Get" Id="{9e76c84d-1b15-434e-9033-b9f087517460}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{46cb9b01-7019-467c-81dc-adeac1ab0c4d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="UnitID" Id="{89649e14-2df6-4b0a-ad7a-6a9fb6459a86}">
+      <Declaration><![CDATA[(*
+|ID address : 0-255
+*)
+PROPERTY UnitID : BYTE]]></Declaration>
+      <Get Name="Get" Id="{f10a8742-e459-457a-a058-8f070ad2d44a}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{99d0e4b3-2b31-4f9b-8cd4-f598a59acd3c}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

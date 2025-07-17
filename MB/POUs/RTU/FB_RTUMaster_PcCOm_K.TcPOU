@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_RTUMaster_PcCOm_K" Id="{58ed53c6-3323-47b3-91b0-8b163e376fa8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_RTUMaster_PcCOm_K EXTENDS FB_ModbusMaster_PcCOM
+VAR_INPUT
+	psKey : POINTER TO STRING(31);
+END_VAR
+VAR
+	{attribute 'hide'}
+	fbREEPROM_CFirmKey : FB_Cx7_Read_EEPROM_CFIRM_KEY;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SUPER^();
+fbREEPROM_CFirmKey(psKey := psKey);]]></ST>
+    </Implementation>
+    <Method Name="Run" Id="{4bad4141-abfe-4551-afca-10ae8c392ed2}">
+      <Declaration><![CDATA[METHOD Run : BOOL /// call from FB_modbus 
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF fbREEPROM_CFirmKey.bCorrectKey THEN
+	iStepGeneral := E_ModBusMasterState.Running;
+END_IF
+Run := iStepGeneral=E_ModBusMasterState.Running;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_RTUMaster_PcCOm_K">
+      <LineId Id="9" Count="0" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_RTUMaster_PcCOm_K.Run">
+      <LineId Id="4" Count="1" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="3" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
