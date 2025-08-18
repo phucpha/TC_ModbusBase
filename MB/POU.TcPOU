@@ -6,6 +6,8 @@ VAR
 	fb : FB_ModbusMaster_PcCOM;
 	fbb : FB_ModbusRtuMaster_KL6x22B;
 	fbc : FB_ModbusRtuMaster_KL6x5B;
+	tcpSlave : FB_ModbusSlaveTcp;
+	tcpMaster : FB_ModbusMasterTcpIp;
 END_VAR
 ]]></Declaration>
     <Implementation>

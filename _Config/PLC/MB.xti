@@ -153,7 +153,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{5AC17664-E38F-41C0-9941-5DA302E01693}" Name="MB" PrjFilePath="..\..\MB\MB.plcproj" TmcFilePath="..\..\MB\MB.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="MB\MB.tmc" TmcHash="{36347967-3DF4-76A1-0614-F01EDF927D42}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="MB\MB.tmc" TmcHash="{385D86AA-5C8C-16AE-97E7-E3C62A2E4CE3}">
 			<Name>MB Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
