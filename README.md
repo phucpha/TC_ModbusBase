@@ -1,4 +1,4 @@
-# TC_ModbusBase TwinCAT library use for Automation device without requrire special Beckhoff license.
+# TC_ModbusBase TwinCAT library.
 
 **The library Lack of:**
 1. Test driven development (TDD).
