@@ -311,13 +311,14 @@ END_VAR
 					bError => bError,
 					nErrId => iErrorId,
 				);
-			
 		END_CASE
-		iStepRunning := E_ModbusMasterStateRun.WaitReadRespond;
+		IF NOT bBusy THEN
+			FbMBReadRegs(bExecute := FALSE);
+			FbMBReadInputRegs(bExecute := FALSE);
+			iStepRunning := E_ModbusMasterStateRun.WaitReadRespond;				
+		END_IF
 						
 	E_ModbusMasterStateRun.WaitReadRespond:
-		FbMBReadRegs(bExecute := FALSE);
-		FbMBReadInputRegs(bExecute := FALSE);
 		IF NOT bBusy AND NOT bError THEN
 			ipModbusSlave[iLoopSlave].ModbusErrorID := iErrorID;
 			iStepRunning := E_ModbusMasterStateRun.ConvertRawData;
@@ -423,14 +424,15 @@ END_VAR
 					nErrId => iErrorId,
 				);
 		END_CASE
-		
-		iStepRunning := E_ModbusMasterStateRun.WaitWriteRespond;
+		IF NOT bBusy THEN
+			FbMBWriteCoils(bExecute := FALSE);
+			FbMBWriteRegs(bExecute := FALSE);
+			FbWriteSingleCoil(bExecute := FALSE);	
+			FbMBWriteSingleReg(bExecute := FALSE);
+			iStepRunning := E_ModbusMasterStateRun.WaitWriteRespond;			
+		END_IF
 	
 	E_ModbusMasterStateRun.WaitWriteRespond :
-		FbMBWriteCoils(bExecute := FALSE);
-		FbMBWriteRegs(bExecute := FALSE);
-		FbWriteSingleCoil(bExecute := FALSE);	
-		FbMBWriteSingleReg(bExecute := FALSE);
 		IF NOT bBusy AND NOT bError THEN
 			ipModbusSlave[iLoopSlave].ModbusErrorID := iErrorID;
 			iStepRunning := E_ModbusMasterStateRun.SetParametersWrite;
@@ -584,7 +586,13 @@ END_VAR
       <LineId Id="1168" Count="12" />
       <LineId Id="991" Count="1" />
       <LineId Id="1183" Count="12" />
-      <LineId Id="1004" Count="34" />
+      <LineId Id="1004" Count="0" />
+      <LineId Id="1006" Count="0" />
+      <LineId Id="1268" Count="0" />
+      <LineId Id="1279" Count="1" />
+      <LineId Id="1269" Count="1" />
+      <LineId Id="1008" Count="1" />
+      <LineId Id="1012" Count="26" />
       <LineId Id="1196" Count="1" />
       <LineId Id="1039" Count="17" />
       <LineId Id="1198" Count="12" />
@@ -597,7 +605,13 @@ END_VAR
       <LineId Id="1232" Count="4" />
       <LineId Id="1096" Count="1" />
       <LineId Id="1238" Count="10" />
-      <LineId Id="1109" Count="26" />
+      <LineId Id="1109" Count="1" />
+      <LineId Id="1274" Count="0" />
+      <LineId Id="1276" Count="2" />
+      <LineId Id="1275" Count="0" />
+      <LineId Id="1271" Count="1" />
+      <LineId Id="1113" Count="1" />
+      <LineId Id="1119" Count="16" />
       <LineId Id="1139" Count="0" />
       <LineId Id="1149" Count="4" />
       <LineId Id="1158" Count="0" />
