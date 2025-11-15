@@ -3,11 +3,10 @@
   <POU Name="POU" Id="{e2653010-59d5-49c6-bdd0-b9433cd60d45}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM POU
 VAR
-	fb : FB_ModbusMaster_PcCOM;
-	fbb : FB_ModbusRtuMaster_KL6x22B;
-	fbc : FB_ModbusRtuMaster_KL6x5B;
-	tcpSlave : FB_ModbusSlaveTcp;
-	tcpMaster : FB_ModbusMasterTcpIp;
+//	fb : FB_ModbusMaster_PcCOM;
+//	fbb : FB_ModbusRtuMaster_KL6x22B;
+//	fbc : FB_ModbusRtuMaster_KL6x5B;
+//	tcpSlave : FB_ModbusSlaveTcp;
 END_VAR
 ]]></Declaration>
     <Implementation>

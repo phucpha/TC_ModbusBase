@@ -481,7 +481,7 @@ FbMBWriteRegs(bExecute := FALSE);]]></ST>
       </Implementation>
     </Method>
     <Method Name="Stop" Id="{29c55c48-0ff2-4962-8292-2c50edc10688}" FolderPath="Methods\">
-      <Declaration><![CDATA[METHOD protected Stop : BOOL
+      <Declaration><![CDATA[METHOD Stop : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[iStepGeneral := E_ModBusMasterState.stop;
